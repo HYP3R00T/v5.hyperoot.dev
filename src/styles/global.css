@@ -1,1 +1,161 @@
 @import "tailwindcss";
+
+
+@layer base {
+
+    /* Dark Theme */
+    :root {
+        --background-base: #0e0f13;
+        --background-surface: #13151b;
+        --background-elevated: #181b22;
+        --text-base: #fefffe;
+        --text-muted: #9ba1b0;
+        --text-subtle: #6c717f;
+
+        --accent-purple: #b052f7;
+        --accent-blue: #526cf7;
+        --accent-cyan: #52dff7;
+        --accent-teal: #52f7d6;
+        --accent-green: #52f75f;
+        --accent-yellow: #f7df52;
+        --accent-orange: #f79652;
+        --accent-red: #f75253;
+
+        --accent-purple-transparent: #b052f7a2;
+        --accent-blue-transparent: #526cf7a2;
+        --accent-cyan-transparent: #52dff7a2;
+        --accent-teal-transparent: #52f7d6a2;
+        --accent-green-transparent: #52f75fa2;
+        --accent-yellow-transparent: #f7df52a2;
+        --accent-orange-transparent: #f79652a2;
+        --accent-red-transparent: #f75253a2;
+
+        /* Code Theme Colors */
+        --astro-code-color-background: var(--background-surface);
+        --astro-code-color-text: var(--text-base);
+        --astro-code-token-constant: var(--accent-orange);
+        --astro-code-token-string: var(--accent-green);
+        --astro-code-token-comment: var(--text-subtle);
+        --astro-code-token-keyword: var(--accent-purple);
+        --astro-code-token-parameter: var(--accent-yellow);
+        --astro-code-token-function: var(--accent-blue);
+        --astro-code-token-string-expression: var(--accent-cyan);
+        --astro-code-token-punctuation: var(--accent-red);
+        --astro-code-token-link: var(--accent-red);
+    }
+
+    [data-theme="dark"] {
+        --background-base: #0e0f13;
+        --background-surface: #13151b;
+        --background-elevated: #181b22;
+        --text-base: #fefffe;
+        --text-muted: #9ba1b0;
+        --text-subtle: #6c717f;
+
+        --accent-purple: #b052f7;
+        --accent-blue: #526cf7;
+        --accent-cyan: #52dff7;
+        --accent-teal: #52f7d6;
+        --accent-green: #52f75f;
+        --accent-yellow: #f7df52;
+        --accent-orange: #f79652;
+        --accent-red: #f75253;
+
+        --accent-purple-transparent: #b052f7a2;
+        --accent-blue-transparent: #526cf7a2;
+        --accent-cyan-transparent: #52dff7a2;
+        --accent-teal-transparent: #52f7d6a2;
+        --accent-green-transparent: #52f75fa2;
+        --accent-yellow-transparent: #f7df52a2;
+        --accent-orange-transparent: #f79652a2;
+        --accent-red-transparent: #f75253a2;
+
+        /* Code Theme Colors */
+        --astro-code-color-background: var(--background-surface);
+        --astro-code-color-text: var(--text-base);
+        --astro-code-token-constant: var(--accent-orange);
+        --astro-code-token-string: var(--accent-green);
+        --astro-code-token-comment: var(--text-subtle);
+        --astro-code-token-keyword: var(--accent-purple);
+        --astro-code-token-parameter: var(--accent-yellow);
+        --astro-code-token-function: var(--accent-blue);
+        --astro-code-token-string-expression: var(--accent-cyan);
+        --astro-code-token-punctuation: var(--accent-red);
+        --astro-code-token-link: var(--accent-red);
+    }
+
+    [data-theme="light"] {
+        --background-base: #f1f3f5;
+        --background-surface: #e6e9ef;
+        --background-elevated: #d0d5dc;
+        --text-base: #1c1e26;
+        --text-muted: #6c717f;
+        --text-subtle: #9ba1b0;
+
+        --accent-purple: #6a2bde;
+        --accent-blue: #4a71e1;
+        --accent-cyan: #2bc3e5;
+        --accent-teal: #3cc9b8;
+        --accent-green: #4caf50;
+        --accent-yellow: #f1c40f;
+        --accent-orange: #f39c12;
+        --accent-red: #e74c3c;
+
+        --accent-purple-transparent: #6a2bdea2;
+        --accent-blue-transparent: #4a71e1a2;
+        --accent-cyan-transparent: #2bc3e5a2;
+        --accent-teal-transparent: #3cc9b8a2;
+        --accent-green-transparent: #4caf50a2;
+        --accent-yellow-transparent: #f1c40fa2;
+        --accent-orange-transparent: #f39c12a2;
+        --accent-red-transparent: #e74c3ca2;
+
+        /* Code Theme Colors */
+        --astro-code-color-background: var(--background-surface);
+        --astro-code-color-text: var(--text-base);
+        --astro-code-token-constant: var(--accent-orange);
+        --astro-code-token-string: var(--accent-green);
+        --astro-code-token-comment: var(--text-subtle);
+        --astro-code-token-keyword: var(--accent-purple);
+        --astro-code-token-parameter: var(--accent-yellow);
+        --astro-code-token-function: var(--accent-blue);
+        --astro-code-token-string-expression: var(--accent-cyan);
+        --astro-code-token-punctuation: var(--accent-red);
+        --astro-code-token-link: var(--accent-red);
+    }
+}
+
+@theme {
+    --color-background-base: var(--background-base);
+    --color-background-surface: var(--background-surface);
+    --color-background-elevated: var(--background-elevated);
+    --color-text-base: var(--text-base);
+    --color-text-muted: var(--text-muted);
+    --color-text-subtle: var(--text-subtle);
+    --color-accent-purple: var(--accent-purple);
+    --color-accent-blue: var(--accent-blue);
+    --color-accent-cyan: var(--accent-cyan);
+    --color-accent-teal: var(--accent-teal);
+    --color-accent-green: var(--accent-green);
+    --color-accent-yellow: var(--accent-yellow);
+    --color-accent-orange: var(--accent-orange);
+    --color-accent-red: var(--accent-red);
+    --color-accent-purple-transparent: var(--accent-purple-transparent);
+    --color-accent-blue-transparent: var(--accent-blue-transparent);
+    --color-accent-cyan-transparent: var(--accent-cyan-transparent);
+    --color-accent-teal-transparent: var(--accent-teal-transparent);
+    --color-accent-green-transparent: var(--accent-green-transparent);
+    --color-accent-yellow-transparent: var(--accent-yellow-transparent);
+    --color-accent-orange-transparent: var(--accent-orange-transparent);
+    --color-accent-red-transparent: var(--accent-red-transparent);
+}
+
+@layer base {
+    * {
+        @apply scroll-smooth transition-transform box-border;
+    }
+
+    body {
+        @apply bg-background-base text-text-base;
+    }
+}
