@@ -1,0 +1,14 @@
+{
+    "name": "hyperoot.dev",
+    "short_name": "hyperoot",
+    "description": "A portfolio and blog showcasing Rajesh's skills in DevOps, Python, and Cloud.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "type": "image/svg+xml"
+        }
+    ]
+}
