@@ -28,6 +28,8 @@
     --danger: hsl(360, 91%, 65%);
     --info: hsl(189, 91%, 65%);
 
+    --radius: 0.3rem;
+
     --accent-purple: hsl(274, 91%, 65%);
     --accent-blue: hsl(231, 91%, 65%);
     --accent-cyan: hsl(189, 91%, 65%);
@@ -81,6 +83,8 @@
     --danger: hsl(360, 91%, 65%);
     --info: hsl(189, 91%, 65%);
 
+    --radius: 0.3rem;
+
     --accent-purple: hsl(274, 91%, 65%);
     --accent-blue: hsl(231, 91%, 65%);
     --accent-cyan: hsl(189, 91%, 65%);
@@ -126,6 +130,7 @@
   --color-warning: var(--warning);
   --color-danger: var(--danger);
   --color-info: var(--info);
+  --radius-radius: var(--radius);
   --color-accent-purple: var(--accent-purple);
   --color-accent-blue: var(--accent-blue);
   --color-accent-cyan: var(--accent-cyan);
@@ -147,7 +152,7 @@
 }
 
 h1 {
-  @apply scroll-m-20 text-4xl font-bold lg:text-5xl tracking-tight pt-2;
+  @apply scroll-m-20 text-4xl font-bold lg:text-5xl tracking-tight pt-2 leading-normal;
 }
 
 h2 {
@@ -167,7 +172,7 @@ p {
 }
 
 a {
-  @apply no-underline text-text-primary hover:text-accent-blue;
+  @apply no-underline text-text-primary;
 }
 
 ::selection {
@@ -193,5 +198,5 @@ a {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-accent-blue;
+  @apply bg-accent-primary;
 }
