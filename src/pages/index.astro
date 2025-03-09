@@ -1,3 +1,30 @@
 ---
+import { Icon } from "astro-icon/components";
 
+import Button from "@/components/ui/Button.astro";
+import CoreLayout from "@/layouts/CoreLayout.astro";
 ---
+
+<CoreLayout>
+  <div class="flex flex-col w-full">
+    <h1>Hey</h1>
+  </div>
+  <div class="flex flex-row gap-4 items-center">
+    <Button variant="default">default</Button>
+    <Button variant="destructive">destructive</Button>
+    <Button variant="outline">outline</Button>
+    <Button variant="secondary">secondary</Button>
+    <Button variant="ghost">ghost</Button>
+    <Button variant="link">link</Button>
+
+    <Button variant="outline" size="icon">
+      <Icon name="plus" />
+    </Button>
+    <Button as="a" href="https://astro.build" variant="link">
+      Astro Docs
+    </Button>
+    <a href="https://astro.build">
+      <Button variant="link"> Astro Docs </Button>
+    </a>
+  </div>
+</CoreLayout>
