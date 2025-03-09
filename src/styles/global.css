@@ -1,1 +1,197 @@
 @import "tailwindcss";
+
+@layer base {
+  /* Dark Theme */
+  :root {
+    /* Backgrounds */
+    --background-base: hsl(220, 15%, 6%);
+    --background-surface: hsl(220, 15%, 9%);
+    --background-elevated: hsl(220, 15%, 12%);
+
+    /* Text */
+    --text-primary: hsl(0, 0%, 95%);
+    --text-secondary: hsl(0, 0%, 80%);
+    --text-muted: hsl(0, 0%, 60%);
+
+    /* Accent Colors */
+    --accent-primary: hsl(220, 90%, 60%);
+    --accent-secondary: hsl(274, 91%, 65%);
+
+    /* UI */
+    --border: hsl(220, 10%, 20%);
+    --input: hsl(220, 10%, 15%);
+    --focus-ring: hsl(220, 90%, 70%);
+
+    /* Simple Status Colors */
+    --success: hsl(125, 91%, 65%);
+    --warning: hsl(25, 91%, 65%);
+    --danger: hsl(360, 91%, 65%);
+    --info: hsl(189, 91%, 65%);
+
+    --accent-purple: hsl(274, 91%, 65%);
+    --accent-blue: hsl(231, 91%, 65%);
+    --accent-cyan: hsl(189, 91%, 65%);
+    --accent-teal: hsl(168, 91%, 65%);
+    --accent-green: hsl(125, 91%, 65%);
+    --accent-yellow: hsl(51, 91%, 65%);
+    --accent-orange: hsl(25, 91%, 65%);
+    --accent-red: hsl(360, 91%, 65%);
+
+    /* Code Theme Colors */
+    --astro-code-background: color-mix(
+      in srgb,
+      var(--background-base) 50%,
+      transparent
+    );
+    --astro-code-foreground: var(--text-primary);
+    --astro-code-token-constant: var(--accent-orange);
+    --astro-code-token-string: var(--accent-green);
+    --astro-code-token-comment: var(--text-muted);
+    --astro-code-token-keyword: var(--accent-purple);
+    --astro-code-token-parameter: var(--accent-yellow);
+    --astro-code-token-function: var(--accent-blue);
+    --astro-code-token-string-expression: var(--accent-cyan);
+    --astro-code-token-punctuation: var(--accent-red);
+    --astro-code-token-link: var(--accent-red);
+  }
+
+  [data-theme="dark"] {
+    /* Backgrounds */
+    --background-base: hsl(220, 15%, 6%);
+    --background-surface: hsl(220, 15%, 9%);
+    --background-elevated: hsl(220, 15%, 12%);
+
+    /* Text */
+    --text-primary: hsl(0, 0%, 95%);
+    --text-secondary: hsl(0, 0%, 80%);
+    --text-muted: hsl(0, 0%, 60%);
+
+    /* Accent Colors */
+    --accent-primary: hsl(220, 90%, 60%);
+    --accent-secondary: hsl(274, 91%, 65%);
+
+    /* UI */
+    --border: hsl(220, 10%, 20%);
+    --input: hsl(220, 10%, 15%);
+    --focus-ring: hsl(220, 90%, 70%);
+
+    /* Simple Status Colors */
+    --success: hsl(125, 91%, 65%);
+    --warning: hsl(25, 91%, 65%);
+    --danger: hsl(360, 91%, 65%);
+    --info: hsl(189, 91%, 65%);
+
+    --accent-purple: hsl(274, 91%, 65%);
+    --accent-blue: hsl(231, 91%, 65%);
+    --accent-cyan: hsl(189, 91%, 65%);
+    --accent-teal: hsl(168, 91%, 65%);
+    --accent-green: hsl(125, 91%, 65%);
+    --accent-yellow: hsl(51, 91%, 65%);
+    --accent-orange: hsl(25, 91%, 65%);
+    --accent-red: hsl(360, 91%, 65%);
+
+    /* Code Theme Colors */
+    --astro-code-background: color-mix(
+      in srgb,
+      var(--background-base) 50%,
+      transparent
+    );
+    --astro-code-foreground: var(--text-primary);
+    --astro-code-token-constant: var(--accent-orange);
+    --astro-code-token-string: var(--accent-green);
+    --astro-code-token-comment: var(--text-muted);
+    --astro-code-token-keyword: var(--accent-purple);
+    --astro-code-token-parameter: var(--accent-yellow);
+    --astro-code-token-function: var(--accent-blue);
+    --astro-code-token-string-expression: var(--accent-cyan);
+    --astro-code-token-punctuation: var(--accent-red);
+    --astro-code-token-link: var(--accent-red);
+  }
+}
+
+@theme {
+  --color-*: initial;
+  --color-background-base: var(--background-base);
+  --color-background-surface: var(--background-surface);
+  --color-background-elevated: var(--background-elevated);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-focus-ring: var(--focus-ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-teal: var(--accent-teal);
+  --color-accent-green: var(--accent-green);
+  --color-accent-yellow: var(--accent-yellow);
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-red: var(--accent-red);
+}
+
+@layer base {
+  * {
+    @apply scroll-smooth transition-transform box-border;
+  }
+
+  body {
+    @apply bg-background-base text-text-primary;
+  }
+}
+
+h1 {
+  @apply scroll-m-20 text-4xl font-bold lg:text-5xl tracking-tight pt-2;
+}
+
+h2 {
+  @apply mt-5 scroll-m-20 pb-2 text-3xl tracking-wide first:mt-0;
+}
+
+h3 {
+  @apply mt-3 scroll-m-20 text-2xl tracking-tight;
+}
+
+h4 {
+  @apply mt-2 scroll-m-20 text-xl tracking-tight;
+}
+
+p {
+  @apply [&:not(:first-child)]:mt-2;
+}
+
+a {
+  @apply no-underline text-text-primary hover:text-accent-blue;
+}
+
+::selection {
+  @apply bg-text-primary text-background-base;
+}
+
+/* ===== scrollbar ===== */
+
+/* width */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-background-surface rounded;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-text-muted border-background-surface rounded;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent-blue;
+}
