@@ -5,6 +5,7 @@ import { LOCALE, SITE } from "config";
 
 import type { BaseLayoutProps } from "@/lib/types";
 import { capitalizeFirstLetter } from "@/lib/utils";
+import Header from "@/components/core/Header.astro";
 
 const { title, description, image, imageAlt, contentType } =
   Astro.props as BaseLayoutProps;
@@ -22,7 +23,8 @@ const { title, description, image, imageAlt, contentType } =
   </head>
 
   <body>
-    <main class="flex justify-center">
+    <main class="flex flex-col items-center">
+      <Header />
       <div class="flex flex-col w-full min-h-screen">
         <slot />
       </div>
