@@ -1,5 +1,7 @@
 ---
-interface ButtonProps {
+import type { HTMLAttributes } from "astro/types";
+
+interface ButtonProps extends HTMLAttributes<"button"> {
   variant?:
     | "default"
     | "destructive"
@@ -17,6 +19,7 @@ const {
   size = "default",
   type = "button",
   disabled = false,
+  ...rest
 } = Astro.props as ButtonProps;
 ---
 
@@ -45,6 +48,7 @@ const {
   }`}
   type={type}
   disabled={disabled}
+  {...rest}
 >
   <slot />
 </button>
