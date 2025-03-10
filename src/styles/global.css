@@ -172,7 +172,7 @@ p {
 }
 
 a {
-  @apply no-underline text-text-primary;
+  @apply no-underline;
 }
 
 ::selection {
@@ -188,12 +188,12 @@ a {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  @apply bg-background-surface rounded;
+  @apply bg-background-base rounded;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  @apply bg-text-muted border-background-surface rounded;
+  @apply bg-border border-background-base rounded;
 }
 
 /* Handle on hover */
