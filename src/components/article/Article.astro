@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import type { ArticlePostLayoutProps } from "@/lib/types";
+import DefaultImage from "@/assets/images/setup.png";
+const {
+  author,
+  pubDatetime,
+  modDatetime,
+  title,
+  featured,
+  draft,
+  category,
+  tags,
+  description,
+  cover,
+  coverAlt,
+  headings,
+} = Astro.props as ArticlePostLayoutProps;
+---
+
+<div class="flex flex-col">
+  <div class="">
+    {/* @ts-ignore */}
+    <Image
+      src={cover}
+      alt={coverAlt}
+      class="lg:aspect-[3/1] object-cover rounded-2xl w-full"
+      transition:name=`${title}image`
+    />
+    <h1 transition:name={title}>{title}</h1>
+    <div class="prose">
+      <slot />
+    </div>
+  </div>
+</div>

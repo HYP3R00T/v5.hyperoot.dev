@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import type { ArticleProps } from "@/lib/types";
+import Button from "../ui/Button.astro";
+
+export interface ArticleCardProps {
+  post: ArticleProps;
+}
+
+const { post } = Astro.props as ArticleCardProps;
+---
+
+<div
+  class="group px-6 py-4 border border-transparent rounded-radius bg-background-elevated/20 text-primary-foreground shadow hover:bg-background-elevated/50"
+>
+  <a href={`/article/${post.id}/`} class="">
+    <div class="">
+      <h4 class="" transition:name={post.data.title}>
+        {post.data.title}
+      </h4>
+      <p class="text-text-muted">{post.data.description}</p>
+      <div class="flex flex-wrap flex-row gap-2 pt-4">
+        {
+          post.data.tags.map((tag) => (
+            <div class="">
+              <Button variant="secondary" size="sm">
+                {tag}
+              </Button>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </a>
+</div>
