@@ -3,8 +3,12 @@ import { Icon } from "astro-icon/components";
 
 import Button from "@/components/ui/Button.astro";
 import CoreLayout from "@/layouts/CoreLayout.astro";
+import { Image } from "astro:assets";
+import NotFound_404 from "@/assets/images/404.png";
 ---
 
 <CoreLayout>
-  <div class="flex flex-col w-full">Something went wrong!!</div>
+  <div class="flex flex-col max-w-3xl z-10">
+    <Image src={NotFound_404} alt="Not Found" class="max-w-xl" />
+  </div>
 </CoreLayout>

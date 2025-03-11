@@ -1,11 +1,26 @@
 ---
 import Link from "@/components/ui/Link.astro";
+import Button from "../ui/Button.astro";
+import { Icon } from "astro-icon/components";
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
 ---
 
-<section class="space-y-4 p-6 flex flex-row w-full justify-evenly">
-  <a href="/home" class=""> <img src="/Logo.svg" alt="Logo" class="h-9" /></a>
+<section class="space-y-4 p-6 flex flex-row w-full justify-evenly z-10">
+  <a href="/" class=""> <img src="/Logo.svg" alt="Logo" class="h-9" /></a>
   <div class="flex flex-row gap-4">
-    <Link href="/article">Articles</Link>
-    <Link href="/project">Projects</Link>
+    <Link
+      href="/article"
+      class={currentPath.startsWith("article")
+        ? "bg-background-elevated/40"
+        : ""}>Articles</Link
+    >
+    <Link
+      href="/project"
+      class={currentPath.startsWith("project")
+        ? "bg-background-elevated/40"
+        : ""}>Projects</Link
+    >
   </div>
 </section>

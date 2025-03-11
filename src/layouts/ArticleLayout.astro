@@ -1,0 +1,48 @@
+---
+import Article from "@/components/article/Article.astro";
+
+import type { ArticlePostLayoutProps } from "@/lib/types";
+import CoreLayout from "./CoreLayout.astro";
+
+const {
+  author,
+  pubDatetime,
+  modDatetime,
+  title,
+  featured,
+  draft,
+  category,
+  tags,
+  description,
+  cover,
+  coverAlt,
+  headings,
+} = Astro.props as ArticlePostLayoutProps;
+---
+
+<CoreLayout
+  title={title}
+  description={description}
+  image={cover}
+  imageAlt={coverAlt}
+  contentType="article"
+>
+  <div class="z-10 max-w-3xl">
+    <Article
+      author={author}
+      pubDatetime={pubDatetime}
+      modDatetime={modDatetime}
+      title={title}
+      featured={featured}
+      draft={draft}
+      category={category}
+      tags={tags}
+      description={description}
+      cover={cover}
+      coverAlt={coverAlt}
+      headings={headings}
+    >
+      <slot />
+    </Article>
+  </div>
+</CoreLayout>
