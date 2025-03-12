@@ -1,0 +1,32 @@
+---
+import type { ProjectProps } from "@/lib/types";
+import { Image } from "astro:assets";
+import DefaultImage from "@/assets/images/setup.png";
+import { Icon } from "astro-icon/components";
+import Button from "../ui/Button.astro";
+const { id, body, collection, data } = Astro.props as ProjectProps;
+---
+
+<div
+  class="group px-6 py-4 border border-transparent rounded-radius bg-background-surface/30 text-primary-foreground shadow hover:bg-background-surface/50"
+>
+  <a href={`/project/${id}/`}>
+    <div class="">
+      <h4 class="" transition:name={data.title}>
+        {data.title}
+      </h4>
+      <p class="text-text-muted">{data.description}</p>
+      <div class="flex flex-wrap flex-row gap-2 pt-4">
+        {
+          data.tags.map((tag) => (
+            <div class="">
+              <Button variant="secondary" size="sm">
+                {tag}
+              </Button>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </a>
+</div>

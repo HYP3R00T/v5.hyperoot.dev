@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import type { ArticlePostLayoutProps } from "@/lib/types";
-import DefaultImage from "@/assets/images/setup.png";
 const {
   author,
   pubDatetime,
@@ -18,17 +17,17 @@ const {
 } = Astro.props as ArticlePostLayoutProps;
 ---
 
-<div class="flex flex-col">
-  <div class="">
+<div class="flex flex-col w-full">
+  <div class="flex flex-col">
+    <h1 transition:name={title} class="text-accent-blue">{title}</h1>
     {/* @ts-ignore */}
     <Image
       src={cover}
       alt={coverAlt}
-      class="lg:aspect-[3/1] object-cover rounded-2xl w-full"
+      class="lg:aspect-[3/1] object-cover rounded-radius w-full my-6"
       transition:name=`${title}image`
     />
-    <h1 transition:name={title}>{title}</h1>
-    <div class="prose">
+    <div class="prose my-8">
       <slot />
     </div>
   </div>

@@ -8,19 +8,29 @@ const currentPath = pathname.slice(1);
 ---
 
 <section class="space-y-4 p-6 flex flex-row w-full justify-evenly z-10">
-  <a href="/" class=""> <img src="/Logo.svg" alt="Logo" class="h-9" /></a>
+  <!-- <a href="/" class=""> <img src="/Logo.svg" alt="Logo" class="h-9" /></a> -->
   <div class="flex flex-row gap-4">
+    <Link
+      href="/"
+      class={currentPath === "" ? "bg-background-elevated/30" : ""}
+    >
+      Home
+    </Link>
     <Link
       href="/article"
       class={currentPath.startsWith("article")
-        ? "bg-background-elevated/40"
-        : ""}>Articles</Link
+        ? "bg-background-elevated/30"
+        : ""}
     >
+      Articles
+    </Link>
     <Link
       href="/project"
       class={currentPath.startsWith("project")
-        ? "bg-background-elevated/40"
-        : ""}>Projects</Link
+        ? "bg-background-elevated/30"
+        : ""}
     >
+      Projects
+    </Link>
   </div>
 </section>

@@ -12,6 +12,7 @@ interface ButtonProps extends HTMLAttributes<"button"> {
   size?: "default" | "sm" | "lg" | "icon";
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
+  class?: string;
 }
 
 const {
@@ -19,6 +20,7 @@ const {
   size = "default",
   type = "button",
   disabled = false,
+  class: className,
   ...rest
 } = Astro.props as ButtonProps;
 ---
@@ -31,10 +33,10 @@ const {
         "bg-accent-primary text-primary-foreground shadow hover:bg-accent-primary/80",
       destructive: "bg-danger shadow-sm hover:bg-danger/90",
       outline:
-        "border border-text-primary/10 shadow-sm hover:bg-text-secondary/30",
+        "border border-text-primary/10 shadow-sm hover:bg-background-elevated/50",
       secondary:
-        "bg-text-secondary/10 text-primary-foreground shadow hover:bg-text-secondary/30",
-      ghost: "hover:bg-text-secondary/30",
+        "bg-background-elevated/30 text-text-secondary shadow hover:bg-background-elevated/50",
+      ghost: "hover:bg-background-elevated/50",
       link: "text-primary underline-offset-4 hover:underline",
     }[variant]
   }
@@ -45,7 +47,9 @@ const {
       lg: "h-10 px-8",
       icon: "h-9 w-9",
     }[size]
-  }`}
+  }
+  ${className}
+  `}
   type={type}
   disabled={disabled}
   {...rest}

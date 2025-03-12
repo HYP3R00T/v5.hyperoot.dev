@@ -1,0 +1,28 @@
+---
+import Logo from "@/assets/images/Logo.png";
+import { Image } from "astro:assets";
+---
+
+<div class="flex flex-col lg:flex-row py-4 px-4 font-display">
+  <div class="">
+    <h1
+      class="text-5xl special-text leading-14! pt-0! text-center lg:text-left"
+    >
+      Rajesh Kumar Das
+    </h1>
+    <h3 class="leading-14! mt-0! text-text-secondary text-center lg:text-left">
+      DevOps Engineer
+    </h3>
+
+    <p
+      class="text-lg text-text-secondary [&:not(:first-child)]:mt-0! text-pretty"
+    >
+      Passionate about making DevOps smoother, workflows smarter, and
+      open-source stronger. I build automation, document everything, and share
+      my learnings along the way.
+    </p>
+  </div>
+  <div class="hidden lg:flex">
+    <Image src={Logo} alt="Logo" class="max-w-48 max-h-48" />
+  </div>
+</div>

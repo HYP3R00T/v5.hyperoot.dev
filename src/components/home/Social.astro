@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon/components";
+
+import { Socials } from "config";
+import Button from "@/components/ui/Button.astro";
+---
+
+<div class="flex gap-4 flex-wrap items-center justify-center mb-4">
+  {
+    Socials.filter((social) => social.active).map((social) => (
+      <a href={social.href} target="_blank" class="text-text-blue">
+        <Button variant="ghost" size="icon" class="h-12! w-12!">
+          <Icon name={social.name} class="w-[1.4rem] h-[1.4rem]" />
+        </Button>
+      </a>
+    ))
+  }
+</div>

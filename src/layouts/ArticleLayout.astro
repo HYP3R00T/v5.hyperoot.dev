@@ -2,7 +2,7 @@
 import Article from "@/components/article/Article.astro";
 
 import type { ArticlePostLayoutProps } from "@/lib/types";
-import CoreLayout from "./CoreLayout.astro";
+import CoreLayout from "@/layouts/CoreLayout.astro";
 
 const {
   author,
@@ -27,7 +27,7 @@ const {
   imageAlt={coverAlt}
   contentType="article"
 >
-  <div class="z-10 max-w-3xl">
+  <div class="z-10 w-full max-w-3xl px-4 lg:px-0">
     <Article
       author={author}
       pubDatetime={pubDatetime}

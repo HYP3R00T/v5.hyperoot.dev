@@ -40,7 +40,7 @@ const metadata = await getMetadata(url);
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class="_card flex flex-row border rounded-none border-background-elevated my-2 p-0 hover:bg-background-surface h-32 justify-between"
+  class="_card flex flex-row border border-border rounded-radius my-2 p-0 text-text-secondary! bg-background-elevated/20! hover:text-text-primary! hover:bg-background-elevated/60! h-32 justify-between no-underline!"
 >
   <div class="flex flex-col justify-between px-3 py-2 items-start">
     <div class="">
@@ -53,7 +53,7 @@ const metadata = await getMetadata(url);
   </div>
   {
     metadata.image && (
-      <div class="flex flex-col overflow-hidden">
+      <div class="hidden lg:flex flex-col overflow-hidden rounded-radius">
         <img
           src={metadata.image}
           alt={metadata.title}

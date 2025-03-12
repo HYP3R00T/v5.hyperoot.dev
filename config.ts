@@ -11,6 +11,7 @@ export const SITE = {
   imageAlt: "Check out hyperoot.dev",
   contentType: "Portfolio",
   twitterHandle: "@HYP3R00T",
+  scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 
 export const LOCALE = {
@@ -18,6 +19,12 @@ export const LOCALE = {
 }
 
 export const Socials: SocialObjects[] = [
+  {
+    name: "mail",
+    href: "mailto:rajesh@hyperoot.dev",
+    linkTitle: `Send an email to ${SITE.title}`,
+    active: true,
+  },
   {
     name: "github",
     href: "https://github.com/HYP3R00T/",
@@ -40,12 +47,6 @@ export const Socials: SocialObjects[] = [
     name: "linkedin",
     href: "https://www.linkedin.com/in/rajesh-kumar-das/",
     linkTitle: `${SITE.title} on LinkedIn`,
-    active: true,
-  },
-  {
-    name: "mail",
-    href: "mailto:rajesh@hyperoot.dev",
-    linkTitle: `Send an email to ${SITE.title}`,
     active: true,
   },
   {

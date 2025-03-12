@@ -41,3 +41,30 @@ export interface Heading {
 export interface ArticlePostLayoutProps extends ArticleData {
   headings: Heading[];
 }
+
+// Make similar changes to config.ts in content folder
+export type ProjectData = {
+  title: string;
+  description: string;
+  altDescription: string;
+  pubDatetime?: Date;
+  modDatetime?: Date | null;
+  tags: string[];
+  githubRepo: string;
+  documentation?: string;
+  featured: boolean;
+  draft: boolean;
+  cover?: string;
+  coverAlt?: string;
+};
+
+// Define the type for project collection
+export type ProjectProps = CollectionEntry<"project">;
+
+// For social links (config.ts)
+export interface SocialObjects {
+  name: string;
+  href: string;
+  active: boolean;
+  linkTitle: string;
+}
