@@ -35,8 +35,8 @@ const project = defineCollection({
       documentation: z.string().optional(),
       featured: z.boolean().optional().default(false),
       draft: z.boolean().default(false),
-      cover: image().optional(),
-      coverAlt: z.string().optional(),
+      cover: image(),
+      coverAlt: z.string(),
     }),
 });
 

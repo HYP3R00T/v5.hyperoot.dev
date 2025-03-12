@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import type { ProjectData } from "@/lib/types";
 import { Icon } from "astro-icon/components";
+import Button from "@/components/ui/Button.astro";
 const {
   title,
   description,
@@ -18,18 +19,38 @@ const {
 } = Astro.props as ProjectData;
 ---
 
-<div class="flex flex-col w-full">
-  <div class="">
-    <h1 transition:name={title}>{title}</h1>
+<div class="flex flex-col w-full my-8">
+  <div class="flex flex-col justify-center gap-4">
+    <h1 class="leading-none special-text text-center" transition:name={title}>
+      {title}
+    </h1>
+    <div
+      class="flex flex-row gap-4 justify-center"
+      transition:name=`${title}links`
+    >
+      <a href=`https://github.com/${githubRepo}` target="_blank" class="">
+        <Button variant="secondary" size="icon" class="text-text-primary!">
+          <Icon name="github" class="w-[1.2rem] h-[1.2rem]" />
+        </Button>
+      </a>
+      <a href={documentation} target="_blank" class="">
+        <Button variant="secondary" size="icon" class="text-text-primary!">
+          <Icon name="laptop" class="w-[1.2rem] h-[1.2rem]" />
+        </Button>
+      </a>
+    </div>
+  </div>
+
+  <div class="my-8">
     {/* @ts-ignore */}
     <Image
       src={cover}
       alt={coverAlt}
-      class="lg:aspect-[3/1] object-cover rounded-radius w-full my-6"
+      class="aspect-[2/1] object-cover rounded-radius w-full my-6"
       transition:name=`${title}image`
     />
-    <div class="prose my-8">
-      <slot />
-    </div>
+  </div>
+  <div class="prose my-8">
+    <slot />
   </div>
 </div>

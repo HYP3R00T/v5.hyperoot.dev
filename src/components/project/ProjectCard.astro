@@ -8,25 +8,38 @@ const { id, body, collection, data } = Astro.props as ProjectProps;
 ---
 
 <div
-  class="group px-6 py-4 border border-transparent rounded-radius bg-background-surface/30 text-primary-foreground shadow hover:bg-background-surface/50"
+  class="group px-6 py-4 border border-transparent rounded-radius bg-background-surface/30 text-primary-foreground shadow hover:bg-background-surface/50 flex flex-col lg:flex-row gap-4"
 >
-  <a href={`/project/${id}/`}>
-    <div class="">
-      <h4 class="" transition:name={data.title}>
-        {data.title}
-      </h4>
-      <p class="text-text-muted">{data.description}</p>
-      <div class="flex flex-wrap flex-row gap-2 pt-4">
-        {
-          data.tags.map((tag) => (
-            <div class="">
-              <Button variant="secondary" size="sm">
-                {tag}
-              </Button>
-            </div>
-          ))
-        }
-      </div>
+  <div class="lg:w-1/2">
+    <h4 class="text-accent-blue" transition:name={data.title}>
+      {data.title}
+    </h4>
+    <div class="flex flex-row gap-4 py-4" transition:name=`${data.title}links`>
+      <a href=`https://github.com/${data.githubRepo}` target="_blank" class="">
+        <Button variant="secondary" size="icon" class="text-text-primary!">
+          <Icon name="github" class="w-[1.2rem] h-[1.2rem]" />
+        </Button>
+      </a>
+      <a href={data.documentation} target="_blank" class="">
+        <Button variant="secondary" size="icon" class="text-text-primary!">
+          <Icon name="laptop" class="w-[1.2rem] h-[1.2rem]" />
+        </Button>
+      </a>
     </div>
-  </a>
+    <p class="text-text-muted mt-0">{data.description}</p>
+    <div class="py-4">
+      <a href={`/project/${id}/`} class="text-background-base">
+        <Button variant="default" size="lg">Read More</Button>
+      </a>
+    </div>
+  </div>
+  <div class="hidden lg:flex flex-col gap-4 justify-center lg:w-1/2">
+    {/* @ts-ignore */}
+    <Image
+      src={data.cover}
+      alt={data.coverAlt}
+      class="lg:aspect-[2/1] object-cover rounded-radius w-full"
+      transition:name=`${data.title}image`
+    />
+  </div>
 </div>

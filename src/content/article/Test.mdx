@@ -18,6 +18,17 @@ Below is another sample Markdown blog post template with various elements for te
 
 Welcome to this sample blog post that demonstrates a variety of Markdown features for testing your website’s UI. Enjoy exploring the following sections!
 
+
+## Key Features
+
+- **Simplified ANSI Code Usage**: Provides classes like `Colors`, `ScreenControl`, and `Effects` to manage text colors, screen clearing, and text effects with straightforward method calls. For example, changing text color to red is as simple as `print(f"{Colors.FG_RED}Red Text{Effects.RESET}")`.
+
+- **Support for Multiple Color Models**: Offers support for standard 8-bit colors, 256-color mode, RGB, HSL, and Hex color models, allowing developers to customize terminal text with a wide range of colors. This flexibility enables precise color representation in terminal applications.
+
+- **Screen and Cursor Control**: Includes functionalities to clear parts of the screen, hide or show the cursor, and switch between different screen modes, enhancing the interactivity of terminal applications. For instance, hiding the cursor can be achieved with `print(ScreenControl.HIDE_CURSOR)`.
+
+- **Text Effects Management**: Enables easy application of text effects such as bold, underline, and reset, improving the readability and emphasis of terminal outputs. Applying bold text is as simple as `print(f"{Effects.BOLD}Bold Text{Effects.RESET}")`.
+
 ## 1. Headers
 
 ### Main Header  
