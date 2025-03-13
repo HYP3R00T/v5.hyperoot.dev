@@ -1,0 +1,22 @@
+---
+import { Icon } from "astro-icon/components";
+
+const year = new Date().getFullYear();
+---
+
+<section
+  class="p-4 flex flex-row w-full justify-evenly z-10 bg-background-surface/20"
+>
+  <footer class="text-center text-sm flex flex-col justify-center">
+    <p>
+      &copy; {year}
+      <a href="/" class="">hyperoot.dev</a>
+    </p>
+    <p>
+      Licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="">
+        CC BY-NC-ND 4.0
+      </a>
+    </p>
+  </footer>
+</section>

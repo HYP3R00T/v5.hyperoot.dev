@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import Button from "@/components/ui/Button.astro";
 const { prevUrl, nextUrl, firstUrl, lastUrl } = Astro.props;
 ---
 
@@ -8,19 +9,23 @@ const { prevUrl, nextUrl, firstUrl, lastUrl } = Astro.props;
     prevUrl ? (
       <div class="items-center justify-center aspect-square lg:h-16 cursor-pointer flex">
         <a href={prevUrl}>
-          <Icon
-            name="arrow-up"
-            class="h-6 w-6 lg:h-5 lg:w-5 transition-transform duration-300 ease-in-out -rotate-90"
-          />
+          <Button variant="ghost" size="sm">
+            <Icon
+              name="arrow-up"
+              class="h-6 w-6 lg:h-5 lg:w-5 transition-transform duration-300 ease-in-out -rotate-90"
+            />
+          </Button>
         </a>
       </div>
     ) : (
       <div class="items-center justify-center aspect-square lg:h-16 flex">
         <a>
-          <Icon
-            name="arrow-up"
-            class="h-6 w-6 lg:h-5 lg:w-5 transition-transform duration-300 ease-in-out -rotate-90 text-text_subtle"
-          />
+          <Button variant="ghost" size="sm">
+            <Icon
+              name="arrow-up"
+              class="h-6 w-6 lg:h-5 lg:w-5 transition-transform duration-300 ease-in-out -rotate-90 text-text_subtle"
+            />
+          </Button>
         </a>
       </div>
     )
@@ -29,19 +34,23 @@ const { prevUrl, nextUrl, firstUrl, lastUrl } = Astro.props;
     nextUrl ? (
       <div class="items-center justify-center aspect-square lg:h-16 cursor-pointer flex">
         <a href={nextUrl}>
-          <Icon
-            name="arrow-up"
-            class="h-6 w-6 lg:h-5 lg:w-5 transition-transform duration-300 ease-in-out rotate-90"
-          />
+          <Button variant="ghost" size="sm">
+            <Icon
+              name="arrow-up"
+              class="h-6 w-6 lg:h-5 lg:w-5 transition-transform duration-300 ease-in-out rotate-90"
+            />
+          </Button>
         </a>
       </div>
     ) : (
       <div class="items-center justify-center aspect-square lg:h-16 flex">
         <a>
-          <Icon
-            name="arrow-up"
-            class="h-6 w-6 lg:h-5 lg:w-5 transition-transform duration-300 ease-in-out rotate-90 text-text_subtle"
-          />
+          <Button variant="ghost" size="sm">
+            <Icon
+              name="arrow-up"
+              class="h-6 w-6 lg:h-5 lg:w-5 transition-transform duration-300 ease-in-out rotate-90 text-text_subtle"
+            />
+          </Button>
         </a>
       </div>
     )

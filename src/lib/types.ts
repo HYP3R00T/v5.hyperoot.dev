@@ -68,3 +68,8 @@ export interface SocialObjects {
   active: boolean;
   linkTitle: string;
 }
+
+// For FormattedDate.astro
+export interface FormattedDateProps {
+  date?: Date;
+}

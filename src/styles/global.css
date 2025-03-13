@@ -284,6 +284,10 @@ code {
   @apply border-border my-8 opacity-50;
 }
 
+.prose iframe {
+  @apply w-full aspect-[2/1] h-auto;
+}
+
 /* ===== others ===== */
 
 @layer components {
