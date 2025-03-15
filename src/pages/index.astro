@@ -2,18 +2,39 @@
 import CoreLayout from "@/layouts/CoreLayout.astro";
 import Hero from "@/components/home/Hero.astro";
 import Social from "@/components/home/Social.astro";
+import LatestBlogs from "@/components/home/LatestBlogs.astro";
+import FavProjects from "@/components/home/FavProjects.astro";
+import Button from "@/components/ui/Button.astro";
 ---
 
 <CoreLayout>
   <div class="flex flex-col max-w-3xl z-10 w-full px-4 lg:px-0">
-    <div
-      class="flex flex-col gap-6 items-center bg-background-surface/50 rounded-radius mt-8"
-    >
+    <div class="flex flex-col gap-6 items-center rounded-radius mt-8">
       <Hero />
       <Social />
     </div>
+    <div class="flex flex-col gap-6 items-center mt-12">
+      <div class="flex flex-row justify-between w-full items-center">
+        <h2 class="text-center text-text-secondary border-b-0">Latest Blogs</h2>
+        <a href={`/article/`} class="text-background-base">
+          <Button variant="default" size="default"> View All </Button>
+        </a>
+      </div>
+      <LatestBlogs />
+    </div>
+    <div class="flex flex-col gap-6 items-center mt-12">
+      <div class="flex flex-row justify-between w-full items-center">
+        <h2 class="text-center text-text-secondary border-b-0">
+          Favourite Projects
+        </h2>
+        <a href={`/project/`} class="text-background-base">
+          <Button variant="default" size="default"> View All </Button>
+        </a>
+      </div>
+      <FavProjects />
+    </div>
 
-    <div class="flex flex-col w-full items-center my-12">
+    <div class="flex flex-col w-full gap-6 items-center my-12">
       <h2 class="text-center text-text-secondary border-b-0">
         Sign Up For My Free Newsletter
       </h2>
