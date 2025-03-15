@@ -19,6 +19,7 @@
     "astro-auto-import": "^0.4.4",
     "astro-icon": "^1.1.5",
     "rehype-external-links": "^3.0.0",
+    "sharp": "^0.33.5",
     "tailwindcss": "^4.0.12"
   },
   "packageManager": "pnpm@10.6.1+sha512.40ee09af407fa9fbb5fbfb8e1cb40fbb74c0af0c3e10e9224d7b53c7658528615b2c92450e74cfad91e3a2dcafe3ce4050d80bda71d757756d2ce2b66213e9a3"
