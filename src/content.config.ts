@@ -27,9 +27,6 @@ const project = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
-      altDescription: z.string(),
-      pubDatetime: z.date(),
-      modDatetime: z.date().optional().nullable(),
       tags: z.array(z.string()),
       githubRepo: z.string(), // format: "username/repo"
       documentation: z.string().optional(),
