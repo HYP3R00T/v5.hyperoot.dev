@@ -2,11 +2,9 @@
 import CoreLayout from "@/layouts/CoreLayout.astro";
 
 import type { PaginateFunction } from "astro";
-
 import type { ArticleProps } from "@/lib/types";
 import { getCollection } from "astro:content";
 
-import DefaultImage from "@/assets/images/setup.png";
 import Pagination from "@/components/article/Pagination.astro";
 import ArticleCard from "@/components/article/ArticleCard.astro";
 
@@ -25,12 +23,19 @@ export async function getStaticPaths({
     return bDate - aDate;
   });
 
-  return paginate(posts, {
-    pageSize: 6,
-  });
+  // Paginate function returns an array of pages
+  const pagination = paginate(posts, { pageSize: 6 });
+
+  return pagination.map((page) => ({
+    ...page,
+    props: {
+      ...page.props,
+      totalPages: pagination.length, // Get total pages from pagination array length
+    },
+  }));
 }
 
-const { page } = Astro.props;
+const { page, totalPages } = Astro.props;
 ---
 
 <CoreLayout>
@@ -39,7 +44,7 @@ const { page } = Astro.props;
   >
     <div class="my-8">
       <h4 class="text-text-muted font-normal">
-        My personal collection of code snippets, starter guides, tutorials and
+        My personal collection of code snippets, starter guides, tutorials, and
         interesting things I found online. I hope you find something useful
         here.
       </h4>
@@ -47,17 +52,20 @@ const { page } = Astro.props;
     <div class="flex flex-col justify-around gap-8">
       {
         page.data.map((post: ArticleProps) => (
-          <div class="">
+          <div>
             <ArticleCard post={post} />
           </div>
         ))
       }
     </div>
+
     <Pagination
+      currentPage={page.currentPage}
       prevUrl={page.url.prev}
       nextUrl={page.url.next}
       first={page.url.first}
       last={page.url.last}
+      totalPages={totalPages}
     />
   </div>
 </CoreLayout>
