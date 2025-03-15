@@ -30,7 +30,7 @@ const { id, body, collection, data } = Astro.props as ProjectProps;
     <div class="flex flex-row gap-2">
       {
         data.readMore && (
-          <div class="py-4">
+          <div class="pt-4">
             <a href={`/project/${id}/`} class="text-background-base">
               <Button variant="default" size="default">
                 Read More
@@ -40,7 +40,7 @@ const { id, body, collection, data } = Astro.props as ProjectProps;
         )
       }
       <div
-        class="flex flex-row gap-2 py-4"
+        class="flex flex-row gap-2 pt-4"
         transition:name=`${data.title}links`
       >
         <a
