@@ -17,6 +17,12 @@ import Cycle from '@/content/article/images/github_action_development_cycle.png'
 
 ## A genuine problem
 
+```mermaid
+flowchart TD
+    Workstation["Workstation"] -- SSH/kubectl --> Master_Node["Master Node"]
+    Master_Node -- API Server --> Worker_Node_1["Worker Node 1"] & Worker_Node_2["Worker Node 2"]
+```
+
 Recently, I was assigned to develop a workflow that will deploy the documentation whenever we push some changed to the `main` branch. The traditional way to develop GitHub Action pipeline is as following.
 
 <div class="flex justify-center">

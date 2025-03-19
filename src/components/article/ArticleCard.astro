@@ -22,6 +22,20 @@ const { post } = Astro.props as ArticleCardProps;
         <p class="text-text-muted">{post.data.description}</p>
       </a>
       <div class="flex flex-wrap flex-row gap-2 pt-4">
+        <!-- {
+          (
+            <div class="">
+              <a
+                href={`/article/${post.data.category}/`}
+                class="text-background-base"
+              >
+                <Button variant="default" size="sm">
+                  {post.data.category}
+                </Button>
+              </a>
+            </div>
+          )
+        } -->
         {
           post.data.tags.map((tag) => (
             <div class="">
