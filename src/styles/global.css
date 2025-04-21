@@ -244,7 +244,7 @@ code {
 }
 
 .prose blockquote {
-  @apply border-l-4 border-accent-blue pl-6 italic text-text-secondary bg-background-surface/50 py-3 rounded-radius;
+  @apply border-l-4 border-accent-blue pl-6  italic text-text-secondary bg-background-surface/50 my-3 rounded-radius;
 }
 
 .prose pre {
